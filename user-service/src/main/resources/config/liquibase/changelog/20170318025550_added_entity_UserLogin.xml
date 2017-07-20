@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity UserLogin.
+    -->
+    <changeSet id="20170318025550-1" author="jhipster">
+        <createTable tableName="user_login">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="login" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="password" type="varchar(64)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="login_name" type="varchar(32)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="login_domain" type="varchar(32)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="account_no" type="varchar(40)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_time" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="activated" type="bit" defaultValue="1">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_ip" type="varchar(24)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updated_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="password_time" type="varchar(32)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+        <dropDefaultValue tableName="user_login" columnName="created_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="user_login" columnName="updated_time" columnDataType="datetime"/>
+
+    </changeSet>
+</databaseChangeLog>

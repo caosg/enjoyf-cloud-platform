@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aliasName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "englishName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gameTag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170620080441",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "game",
+    "pagination": "pager",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

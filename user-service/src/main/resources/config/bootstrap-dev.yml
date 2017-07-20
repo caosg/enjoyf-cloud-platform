@@ -1,0 +1,41 @@
+# ===================================================================
+# Spring Cloud Config bootstrap configuration for the "prod" profile
+# ===================================================================
+
+spring:
+    cloud:
+        config:
+            fail-fast: true
+            retry:
+                initial-interval: 1000
+                max-interval: 2000
+                max-attempts: 100
+            uri: http://admin:${jhipster.registry.password}@localhost:8761/config
+            # name of the config server's property source (file.yml) that we want to use
+            name: user-service
+            profile: dev # profile(s) of the property source
+            label: master # toggle to switch to a different version of the configuration as stored in git
+            # it can be set to any label, branch or commit of the config source git repository
+#        stream:
+#            bindings:
+#                output:       #channelName
+#                    mydest: rabbit-event
+#                    destination: event_stream
+#                input:       #channelName
+#                    binder: rabbit-event
+#                    destination: event_stream
+##                    group: contentevent
+#            binders:
+#                rabbit-event:
+#                    type: rabbit
+#                    environment:
+#                        spring:
+#                            rabbitmq:
+#                                host: localhost
+#                                port: 5672
+#                                username: ericliu
+#                                password: 123456
+#                                virtual-host: /
+jhipster:
+    registry:
+        password: admin

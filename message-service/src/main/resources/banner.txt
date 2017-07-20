@@ -1,0 +1,11 @@
+
+${AnsiColor.BRIGHT_BLUE}:: EnjoyMe :: Running Spring Boot ${spring-boot.version} ::
+:: http://www.joyme.com ::${AnsiColor.DEFAULT}
+
+${AnsiColor.GREEN} _______ ${AnsiColor.RED} __    _      ___  _______  __   __  __   __  _______
+${AnsiColor.GREEN}|       |${AnsiColor.RED}|  |  | |    |   ||       ||  | |  ||  |_|  ||       |
+${AnsiColor.GREEN}|    ___|${AnsiColor.RED}|   |_| |    |   ||   _   ||  |_|  ||       ||    ___|
+${AnsiColor.GREEN}|   |___ ${AnsiColor.RED}|       |    |   ||  | |  ||       ||       ||   |___
+${AnsiColor.GREEN}|    ___|${AnsiColor.RED}|  _    | ___|   ||  |_|  ||_     _||       ||    ___|
+${AnsiColor.GREEN}|   |___ ${AnsiColor.RED}| | |   ||       ||       |  |   |  | ||_|| ||   |___
+${AnsiColor.GREEN}|_______|${AnsiColor.RED}|_|  |__||_______||_______|  |___|  |_|   |_||_______|

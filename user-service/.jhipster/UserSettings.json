@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "alarmSettings",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "funcSettings",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "updatedTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdIp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedIp",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170318025550",
+    "entityTableName": "user_settings",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

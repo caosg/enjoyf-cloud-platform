@@ -1,0 +1,115 @@
+#!/usr/bin/env groovy
+
+node {
+
+    try {
+        stage('checkout') {
+            checkout scm
+        }
+
+        stage('check java') {
+            sh "java -version"
+        }
+        def pom
+        def mavenHome = "/home/td_java/apache-maven-3.3.9/bin"
+        stage('clean user-service') {
+            dir("./user-service") {
+                sh "${mavenHome}/mvn clean"
+                pom = readMavenPom file: 'pom.xml'
+                print " current version: ${pom.version}"
+            }
+
+        }
+
+//    stage('backend tests') {
+//        try {
+//            sh "${mavenHome}/mvn test"
+//        } catch(err) {
+//            throw err
+//        } finally {
+//            junit '**/target/surefire-reports/TEST-*.xml'
+//        }
+//    }
+
+        stage('packaging user-service') {
+            dir("./user-service") {
+                echo "****** start mvn package user-service ******"
+                sh "${mavenHome}/mvn package -Pprod -DskipTests"
+                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+            }
+        }
+
+//        // push testaliyun
+//        def dockerImage
+//        stage('build docker') {
+//            dir("./user-service") {
+//                echo "****** start build docker image for user-service *****"
+//                sh "cp -R src/main/docker target/"
+//                sh "cp target/*.war target/docker/"
+//                dockerImage = docker.build("ericliu/user-service:${pom.version}", 'target/docker')
+//            }
+//        }
+//
+//        stage('publish docker') {
+//            docker.withRegistry('http://registry.cn-beijing.aliyuncs.com/ericliu/user-service/') {
+//                //登录
+//                sh 'docker login -u liu67224657 -p liu@20140504 registry.cn-beijing.aliyuncs.com/ericliu/user-service'
+//                dockerImage.push()
+//                dockerImage.push 'latest'
+//            }
+//        }
+
+
+        def dockerImage
+        stage('build docker') {
+            dir("./user-service") {
+                echo "****** start build docker image for user-service *****"
+                sh "cp -R src/main/docker target/"
+                sh "cp target/*.war target/docker/"
+                dockerImage = docker.build("enjoyf/user-service-alpha:${pom.version}", 'target/docker')
+            }
+        }
+
+        stage('publish docker') {
+            docker.withRegistry('http://172.16.78.45:5000/') {
+                dockerImage.push()
+                dockerImage.push 'latest'
+            }
+        }
+
+        stage("start docker") {
+            echo "******* start docker container ********"
+            dir("./user-service/target/docker") {
+//                sh "chmod +x deployToDocker.sh"
+                sh "chmod +x stackDeployToDocker.sh"
+                sh "./stackDeployToDocker.sh alpha"
+            }
+        }
+
+        stage('Cleanup ') {
+            dir("./user-service/target/docker") {
+                echo '****** cleanup none docker images ***********'
+                sh "chmod +x cleanUpImages.sh"
+                sh "./cleanUpImages.sh"
+
+//            mail body: 'user-service project build and deploy successful',
+//                 from: 'xxxx@yyyyy.com',
+//                 replyTo: 'xxxx@yyyy.com',
+//                 subject: 'user-service project build and deploy successful',
+//                 to: 'yyyyy@yyyy.com'
+            }
+        }
+
+    }catch (err) {
+
+        echo " user-service project build and deploy fails "
+
+//        mail body: "project build error is here: ${env.BUILD_URL}" ,
+//            from: 'xxxx@yyyy.com',
+//            replyTo: 'yyyy@yyyy.com',
+//            subject: 'project build failed',
+//            to: 'zzzz@yyyyy.com'
+
+        throw err
+    }
+}

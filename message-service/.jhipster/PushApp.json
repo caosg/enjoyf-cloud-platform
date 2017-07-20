@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "appkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "36"
+        },
+        {
+            "fieldName": "thirdAppkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "thirdSecrkey",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170526093948",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "push_app",
+    "pagination": "pagination",
+    "microserviceName": "messageservice",
+    "searchEngine": false
+}

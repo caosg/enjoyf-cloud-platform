@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tagName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gameSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "recommendStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "validStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170620032042",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "game_tag",
+    "pagination": "pager",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

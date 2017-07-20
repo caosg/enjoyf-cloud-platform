@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "appkey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "domain",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "platform",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "target",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extend",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "removeStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "displayOrder",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "AdvertiseDomain",
+            "fieldValues": "n"
+        }
+    ],
+    "changelogDate": "20170515065111",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "advertise",
+    "pagination": "no",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

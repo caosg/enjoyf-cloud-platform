@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "profileKey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "mobile",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "11"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170323100412",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "user_mobile",
+    "pagination": "pager",
+    "microserviceName": "userservice",
+    "searchEngine": false
+}

@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "commentId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "uid",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "destUid",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "operateType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170711083002",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "comment_operation",
+    "pagination": "infinite-scroll",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "gameId",
+            "fieldType": "Long",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "scoreSum",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "scoreNum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fiveUserSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fourUserSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "threeUserSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "twoUserSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "oneUserSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170619042034",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "comment_rating",
+    "pagination": "infinite-scroll",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

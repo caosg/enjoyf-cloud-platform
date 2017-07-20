@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "times",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170328030258",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "profile_rating",
+    "pagination": "no",
+    "microserviceName": "userservice",
+    "searchEngine": false
+}

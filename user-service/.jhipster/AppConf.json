@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "appKey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "40"
+        },
+        {
+            "fieldName": "appType",
+            "fieldType": "AppType",
+            "fieldValues": "CLIENT,GAME"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ValidStatus",
+            "fieldValues": "VALID,NO_VALID"
+        },
+        {
+            "fieldName": "profileKey",
+            "fieldType": "ProfileKey",
+            "fieldValues": "WWW",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "appName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "64"
+        },
+        {
+            "fieldName": "config",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170704102034",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "app_conf",
+    "pagination": "no",
+    "microserviceName": "userService",
+    "searchEngine": false
+}

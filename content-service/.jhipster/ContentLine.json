@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "linekey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ownId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lineType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "destId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "validStatus",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170515094329",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "content_line",
+    "pagination": "no",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

@@ -1,0 +1,21 @@
+version: '3'
+services:
+    gateway-server:
+        image: 172.16.78.45:5000/enjoyf/gateway-server-devtest
+        environment:
+            - SPRING_PROFILES_ACTIVE=devtest,swagger
+            - JHIPSTER_SLEEP=5 # gives time for the Cassandra cluster to start and execute the migration scripts
+            - JAVA_OPTS=-Xmx512m -Xms256m
+        ports:
+            - 28888:28888
+        deploy:
+          replicas: 1
+          update_config:
+            parallelism: 2
+            delay: 10s
+          restart_policy:
+            condition: on-failure
+networks:
+  default:
+    external:
+      name: cloud-devtest

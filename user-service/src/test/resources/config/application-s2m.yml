@@ -1,0 +1,4 @@
+jhipster:
+    swagger:
+        contactName: com.enjoyf.platform.userservice
+        contactEmail: com.enjoyf.platform.userservice@example.org

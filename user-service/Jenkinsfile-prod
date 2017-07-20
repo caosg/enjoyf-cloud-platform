@@ -1,0 +1,87 @@
+#!/usr/bin/env groovy
+
+node {
+
+    try {
+        stage('checkout') {
+            checkout scm
+        }
+
+        stage('check java') {
+            sh "java -version"
+        }
+        def pom
+        def mavenHome = "/home/td_java/apache-maven-3.3.9/bin"
+        stage('clean user-service') {
+            dir("./user-service") {
+                sh "pwd"
+                sh "${mavenHome}/mvn clean"
+                pom = readMavenPom file: 'pom.xml'
+                print " current version: ${pom.version}"
+            }
+
+        }
+
+//    stage('backend tests') {
+//        try {
+//            sh "${mavenHome}/mvn test"
+//        } catch(err) {
+//            throw err
+//        } finally {
+//            junit '**/target/surefire-reports/TEST-*.xml'
+//        }
+//    }
+
+        stage('packaging user-service') {
+            dir("./user-service") {
+                echo "****** start ${mavenHome}/mvn package user-service ******"
+                sh "${mavenHome}/mvn package -Pprod -DskipTests"
+                archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+            }
+        }
+
+        def dockerImage
+        stage('build docker') {
+            dir("./user-service") {
+                echo "****** start build docker image for user-service *****"
+                sh "cp -R src/main/docker target/"
+                sh "cp target/*.war target/docker/"
+                dockerImage = docker.build("joyme_docker/user-service:${pom.version}", 'target/docker')
+            }
+        }
+
+        stage('publish docker') {
+            docker.withRegistry('http://registry.cn-beijing.aliyuncs.com/') {
+                sh "sudo docker login --username=to_group@staff.joyme.com --password=123.abc  registry.cn-beijing.aliyuncs.com"
+                dockerImage.push()
+                dockerImage.push 'latest'
+            }
+        }
+
+//        stage('Cleanup') {
+//            dir("./user-service/target/docker") {
+//                echo 'cleanup none docker images'
+//                sh "chmod +x cleanUpImages.sh"
+//                sh "./cleanUpImages.sh"
+//
+////            mail body: 'user-service project build and deploy successful',
+////                 from: 'xxxx@yyyyy.com',
+////                 replyTo: 'xxxx@yyyy.com',
+////                 subject: 'user-service project build and deploy successful',
+////                 to: 'yyyyy@yyyy.com'
+//            }
+//        }
+
+    }catch (err) {
+
+        echo " user-service project build and deploy fails "
+
+//        mail body: "project build error is here: ${env.BUILD_URL}" ,
+//            from: 'xxxx@yyyy.com',
+//            replyTo: 'yyyy@yyyy.com',
+//            subject: 'project build failed',
+//            to: 'zzzz@yyyyy.com'
+
+        throw err
+    }
+}

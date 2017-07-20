@@ -1,0 +1,22 @@
+version: '3'
+services:
+    profile-service:
+        image: 172.16.78.45:5000/enjoyf/profile-service-alpha
+        environment:
+            - SPRING_PROFILES_ACTIVE=alpha,swagger,no-liquibase
+            - JHIPSTER_SLEEP=10
+            - LOGBACK_LOGLEVEL = DEBUG
+            - JAVA_OPTS=-server -Xmx512m -Xms256m
+        deploy:
+          replicas: 1
+          update_config:
+            parallelism: 2
+            delay: 10s
+          restart_policy:
+            condition: on-failure
+networks:
+  default:
+    external:
+      name: cloud
+
+

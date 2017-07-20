@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "uid",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "commentSum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usefulSum",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170623085800",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "user_comment_sum",
+    "pagination": "no",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

@@ -1,0 +1,27 @@
+### API 说明
+接口完全遵循 *Rest API* 规范开发，通过 *HTTP* 协议提供访问。
+
+支持四种HTTP 请求方式：
+
+* GET  - 查询操作
+* POST - 新增操作
+* PUT  - 修改操作
+* DELETE - 删除操作
+
+### 请求响应格式
+
+请求与响应数据目前支持 `application/json` 格式，编码 `UTF-8`
+
+### 请求参数说明
+
+参数类型包括Path，Query，Body。
+
+* Path -   例如：`curl  http://localhost:8080/user-service/api/accounts/{id}`
+* Query -  例如：`curl  http://localhost:8080/user-service/api/accounts?id={id}`
+* Body  -  请求参数放在HTTP request body,例如：`curl -d '{"name":"xxx","age":20,"sex":"M"}' http://localhost:8080/user-service/api/accounts`
+
+### 响应参数说明
+
+* 响应码说明：200代表成功，4xx开头的代表请求类异常，5xx开头的代表服务端内部异常
+* 响应Body：当http status 为200时，可以从http response body 获得数据对象，其他http status 根据约定提示
+

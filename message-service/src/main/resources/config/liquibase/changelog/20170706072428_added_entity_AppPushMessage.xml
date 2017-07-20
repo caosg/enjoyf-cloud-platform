@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity AppPushMessage.
+    -->
+    <changeSet id="20170706072428-1" author="jhipster">
+        <createTable tableName="app_push_message">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="appkey" type="varchar(36)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="body" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jt" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ji" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_user" type="varchar(32)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="send_type" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="send_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="send_status" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="remove_status" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="push_type" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="push_uid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tags" type="varchar(128)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="app_push_message" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="app_push_message" columnName="send_time" columnDataType="datetime"/>
+
+    </changeSet>
+</databaseChangeLog>

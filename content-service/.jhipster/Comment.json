@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "gameId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "uid",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "body",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agreeNum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifyTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "validStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "highQuality",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "replyNum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "real_score",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170619070336",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "comment",
+    "pagination": "infinite-scroll",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

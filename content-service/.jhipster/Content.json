@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "commentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gameId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "publishTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "webUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "removeStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170512082157",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "content",
+    "pagination": "pagination",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

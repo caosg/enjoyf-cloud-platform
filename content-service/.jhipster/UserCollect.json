@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "collectType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "appkey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "contentId",
+            "fieldType": "Long",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20170515020434",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "user_collect",
+    "pagination": "pagination",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

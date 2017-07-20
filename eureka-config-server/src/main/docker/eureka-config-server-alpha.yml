@@ -1,0 +1,25 @@
+version: '3'
+services:
+    eureka-config-server:
+        image: 172.16.78.45:5000/enjoyf/eureka-config-server-alpha
+#        volumes:
+#            - ./central-server-config:/central-config
+        environment:
+            - SPRING_PROFILES_ACTIVE=alpha,native
+            - SECURITY_USER_PASSWORD=admin
+            - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/
+#            - JHIPSTER_SLEEP=20
+#            - JAVA_OPTS=-Xmx512m -Xms256m
+        ports:
+            - 8761:8761
+        deploy:
+          replicas: 1
+          update_config:
+            parallelism: 2
+            delay: 10s
+          restart_policy:
+            condition: on-failure
+networks:
+  default:
+    external:
+      name: cloud

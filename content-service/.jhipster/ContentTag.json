@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "target",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tagType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tagLine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "displayOrder",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "validStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170512040745",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "content_tag",
+    "pagination": "no",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

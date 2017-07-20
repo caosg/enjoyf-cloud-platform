@@ -1,0 +1,10 @@
+### 安全 & 认证
+
+部分接口需要登陆认证后才允许操作，这类API 需要在请求时，在 `Http Header` 里添加认证 `token`，否则会报 401／403 Unauthorized错误。
+Token获取方式：请求登陆API， 从 http response 响应头里获得 token，token每次登陆后都会重新生成。示例如下：
+
+``
+Authorization：Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzkxMjM0MDAwMCIsImF1dGgiOiJST0xFX1VTRVIiLCJwcm9maWxlTm8iOiI1ZWNmNzMyZTJhMzQ3ZTA0ZDkwMTljYmNjZTJkN2IwNCIsImV4cCI6MTQ5NDQwMzkzNH0.2Gld-8cI3E_58vwPdtlnzKK41bXhYGGFWl-f5WSF7RUKQ7Bcrh2CSnO9kIx9vkhPC5VMdi2Z64psA2tlNFemAQ
+``
+
+

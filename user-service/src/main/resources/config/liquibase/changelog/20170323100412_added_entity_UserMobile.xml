@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity UserMobile.
+    -->
+    <changeSet id="20170323100412-1" author="jhipster">
+        <createTable tableName="user_mobile">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="profile_no" type="varchar(32)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="account_no" type="varchar(36)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="profile_key" type="varchar(32)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="mobile" type="varchar(32)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_time" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="user_mobile" columnName="create_time" columnDataType="datetime"/>
+
+        <createIndex
+                     indexName="idx_profile_no"
+                     tableName="user_mobile"
+                     unique="false">
+            <column name="profile_no" type="varchar(32)"/>
+        </createIndex>
+
+        <createIndex
+                     indexName="idx_unique"
+                     tableName="user_mobile"
+                     unique="true">
+            <column name="mobile" type="varchar(32)"/>
+            <column name="profile_key" type="varchar(32)"/>
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>

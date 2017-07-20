@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "uid",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "appkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "36"
+        },
+        {
+            "fieldName": "deviceId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "127"
+        },
+        {
+            "fieldName": "platform",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tags",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170627022022",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "push_profile_device",
+    "pagination": "no",
+    "microserviceName": "messageservice",
+    "searchEngine": false
+}

@@ -1,0 +1,21 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "agree_num",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20170515063956",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "content_sum",
+    "pagination": "no",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

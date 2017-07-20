@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "appkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "36"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "body",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ji",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sendTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "sendStatus",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "removeStatus",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170706072428",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "app_push_message",
+    "pagination": "infinite-scroll",
+    "microserviceName": "messageservice",
+    "searchEngine": false
+}

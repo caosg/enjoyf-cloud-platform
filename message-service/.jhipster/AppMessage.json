@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "appkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "messageType",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "uid",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "messageBody",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170619053802",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "app_message",
+    "pagination": "infinite-scroll",
+    "microserviceName": "messageservice",
+    "searchEngine": false
+}

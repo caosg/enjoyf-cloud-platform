@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "levelId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "point",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nick",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appKey",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170318025550",
+    "entityTableName": "player",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

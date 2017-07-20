@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "uid",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "reason",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "128"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "create_ip",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appkey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "36"
+        },
+        {
+            "fieldName": "destid",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170622033406",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "feedback",
+    "pagination": "pagination",
+    "microserviceName": "contentService",
+    "searchEngine": false
+}

@@ -1,0 +1,88 @@
+entity UserLogin {
+  login String required minlength(4) maxlength(64),
+  password String required minlength(6),
+  loginName String maxlength(32),
+  loginDomain String required maxlength(32),
+  accountNo String required,
+  createdTime ZonedDateTime required,
+  activated  Boolean
+}
+
+entity UserAccount {
+  accountNo String required,
+  createdTime ZonedDateTime required,
+  flag Integer required
+
+}
+
+entity UserProfile {
+   profileNo String required,
+   mobileNo  String required minlength(11),
+   title String,
+   lowercaseNick String,
+   discription String,
+   icon String,
+   icons String,
+   accountNo String required,
+   profileKey String,
+   flag Integer,
+   realName String,
+   sex  Integer,
+   birthDay String,
+   provinceId Integer,
+   cityId Integer,
+   qq String,
+   createdTime ZonedDateTime required,
+   updatedTime ZonedDateTime,
+   createdIp String
+}
+
+entity UserSettings {
+   profileNo String required ,
+   alarmSettings String ,
+   funcSettings String,
+   createdTime ZonedDateTime required,
+   updatedTime ZonedDateTime,
+   createdIp String,
+   updatedIp String
+}
+entity UserToken {
+   tokenType Integer required,
+   profileKey String required,
+   expires  Integer,
+   accountNo String,
+   profileNo String,
+   createdTime ZonedDateTime required,
+   createdIp String,
+   requestParam String
+}
+
+entity ProfileSummary {
+   profileNo String required,
+   likers Integer,
+   likeds Integer,
+   pics  Integer,
+   likeGames Integer,
+   playingGames Integer
+}
+enum ValidStatus {
+   VALID,INVALID
+}
+entity PlayerLevel {
+   name String required,
+   description String,
+   status ValidStatus,
+   createdTime ZonedDateTime required
+}
+entity Player {
+   profileNo String required,
+   levelId Integer,
+   description String,
+   point  Integer,
+   title String,
+   appKey String
+}
+
+paginate UserProfile, UserAccount, UserLogin, UserSettings with pagination
+service UserAccount, UserProfile with serviceImpl
+paginate Player, ProfileSummary with pagination

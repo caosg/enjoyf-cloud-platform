@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.enjoyf.platform</groupId>
+    <artifactId>cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>eureka-config-server</module>
+        <module>gateway-server</module>
+        <module>enjoy-common-spring-boot-starter</module>
+        <module>message-service</module>
+        <module>user-client</module>
+        <module>user-service</module>
+        <module>profile-service</module>
+        <module>content-service</module>
+    </modules>
+    
+</project>

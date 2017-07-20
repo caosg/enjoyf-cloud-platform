@@ -1,0 +1,27 @@
+version: '3'
+services:
+    user-service:
+        image: 172.16.78.45:5000/enjoyf/user-service-alpha
+        environment:
+            - SPRING_PROFILES_ACTIVE=alpha,swagger,no-liquibase
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@eureka-config-server:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.78.45:3306/userservice-test?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - SPRING_REDIS_HOST = 172.16.78.45
+            - SPRING_REDIS_PORT = 26379
+            - LOGBACK_LOGLEVEL = DEBUG
+            - JHIPSTER_SLEEP=10
+            - JAVA_OPTS=-server -Xmx512m -Xms256m
+#            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@eureka-config-server:8761/eureka/
+        deploy:
+          replicas: 2
+          update_config:
+            parallelism: 2
+            delay: 10s
+          restart_policy:
+            condition: on-failure
+networks:
+  default:
+    external:
+      name: cloud
+
+

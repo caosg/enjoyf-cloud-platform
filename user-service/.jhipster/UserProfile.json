@@ -1,0 +1,112 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "mobileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": 11
+        },
+        {
+            "fieldName": "nick",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lowercaseNick",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "icon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "icons",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "profileKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flag",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "realName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "birthDay",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "provinceId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cityId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "qq",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdTime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "updatedTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdIp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appKey",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "32"
+        }
+    ],
+    "changelogDate": "20170318025550",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "user_profile",
+    "pagination": "pagination",
+    "microserviceName": "userservice",
+    "searchEngine": false
+}

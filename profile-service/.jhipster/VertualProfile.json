@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "40"
+        },
+        {
+            "fieldName": "nick",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "discription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "icon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170616031542",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "vertual_profile",
+    "pagination": "infinite-scroll",
+    "microserviceName": "profileservice",
+    "searchEngine": false
+}

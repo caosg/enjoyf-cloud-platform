@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "profileNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "40"
+        },
+        {
+            "fieldName": "verifyInfo",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "verifyType",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createIp",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170613095052",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "talent",
+    "pagination": "infinite-scroll",
+    "microserviceName": "profileservice",
+    "searchEngine": false
+}
